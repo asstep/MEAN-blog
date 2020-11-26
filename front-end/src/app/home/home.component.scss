@@ -1,0 +1,14 @@
+.figure {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  color: #fff;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.photo {
+  position: absolute;
+  margin: -10% 0 0 0;
+  width: 100%;
+}
