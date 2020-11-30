@@ -54,4 +54,8 @@ export class AuthService {
   getAllPosts(): Observable<any> {
     return this._http.get('http://localhost:3000/');
   }
+
+  getPostById(id): Observable<any> {
+    return this._http.get(`http://localhost:3000/post/${id}`);
+  }
 }

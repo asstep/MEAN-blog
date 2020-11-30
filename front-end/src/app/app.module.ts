@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from "./auth.service";
 import { HttpClientModule } from "@angular/common/http";
 import { JwtModule } from "@auth0/angular-jwt";
+import { PostComponent } from './post/post.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -25,7 +26,8 @@ export function tokenGetter() {
     HeaderComponent,
     RegComponent,
     AuthComponent,
-    DashboardComponent
+    DashboardComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,

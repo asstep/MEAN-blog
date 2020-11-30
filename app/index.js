@@ -49,4 +49,9 @@ app.get('/', (req, res) => {
     })
 })
 
+app.get('/post', (req, res) => {
+    console.log(req);
+    let url = req;
+})
+
 app.use('/account', accout);
