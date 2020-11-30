@@ -58,4 +58,8 @@ export class AuthService {
   getPostById(id): Observable<any> {
     return this._http.get(`http://localhost:3000/post/${id}`);
   }
+
+  deletePost(id): Observable<any> {
+    return this._http.delete(`http://localhost:3000/post/${id}`);
+  }
 }

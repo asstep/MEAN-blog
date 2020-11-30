@@ -30,7 +30,5 @@ const PostSchema = mongoose.Schema({
 const Post = module.exports = mongoose.model('Post', PostSchema);
 
 module.exports.addPost = function (newPost, callback) {
-    console.log(callback);
-    console.log(newPost);
     newPost.save(callback);
 }

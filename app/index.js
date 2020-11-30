@@ -44,14 +44,24 @@ app.listen(port, () => {
 })
 
 app.get('/', (req, res) => {
+    console.log('test');
     Post.find().then( posts => {
         res.json(posts)
     })
 })
 
-app.get('/post', (req, res) => {
-    console.log(req);
-    let url = req;
+app.get('/post/:id', (req, res) => {
+    let id = req.params.id;
+    Post.findById(id).then( post => {
+        res.json(post);
+    })
+})
+
+app.delete('/post/:id', (req, res) => {
+    let id = req.params.id;
+    Post.deleteOne({_id: id}).then( () => {
+        res.json({success: true});
+    })
 })
 
 app.use('/account', accout);

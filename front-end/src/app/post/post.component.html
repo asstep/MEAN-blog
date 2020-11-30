@@ -1,1 +1,6 @@
-<p>post works!</p>
+<div class="container">
+  <h1>{{post.title}}</h1>
+
+  <button *ngIf="login === post.author"
+  (click)="deletePost(post?._id)">Delete</button>
+</div>
