@@ -48,7 +48,8 @@ export class AuthService {
   }
 
   createPost(post): Observable<any> {
-    return this._http.post('http://localhost:3000/account/dashbord', post);
+    let headers = new HttpHeaders().set('Authorization', localStorage.getItem('token'));
+    return this._http.post('http://localhost:3000/account/dashbord', post, { headers: headers });
   }
 
   getAllPosts(): Observable<any> {
@@ -60,6 +61,7 @@ export class AuthService {
   }
 
   deletePost(id): Observable<any> {
-    return this._http.delete(`http://localhost:3000/post/${id}`);
+    let headers = new HttpHeaders().set('Authorization', localStorage.getItem('token'));
+    return this._http.delete(`http://localhost:3000/post/${id}`, { headers: headers });
   }
 }

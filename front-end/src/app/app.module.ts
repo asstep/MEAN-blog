@@ -14,6 +14,7 @@ import { AuthService } from "./auth.service";
 import { HttpClientModule } from "@angular/common/http";
 import { JwtModule } from "@auth0/angular-jwt";
 import { PostComponent } from './post/post.component';
+import { SortingPipe } from './sorting.pipe';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -27,7 +28,8 @@ export function tokenGetter() {
     RegComponent,
     AuthComponent,
     DashboardComponent,
-    PostComponent
+    PostComponent,
+    SortingPipe
   ],
   imports: [
     BrowserModule,

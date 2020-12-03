@@ -8,6 +8,7 @@ import {AuthService} from "../auth.service";
 })
 export class HomeComponent implements OnInit {
   public posts: Array<object>;
+  public category: string;
 
   constructor(
     public authService: AuthService
@@ -19,4 +20,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  public setCategory(category: string) {
+    this.category = category;
+  }
 }

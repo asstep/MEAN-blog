@@ -57,7 +57,7 @@ app.get('/post/:id', (req, res) => {
     })
 })
 
-app.delete('/post/:id', (req, res) => {
+app.delete('/post/:id', passport.authenticate('jwt', { session: false }), (req, res) => {
     let id = req.params.id;
     Post.deleteOne({_id: id}).then( () => {
         res.json({success: true});

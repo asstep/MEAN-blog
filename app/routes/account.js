@@ -55,7 +55,7 @@ router.post('/auth', jsonParser, (req, res) => {
 
                 res.json({
                     success: true,
-                    token: 'JWT' + token,
+                    token: 'JWT ' + token,
                     user: {
                         id: user._id,
                         name: user.name,
@@ -70,7 +70,7 @@ router.post('/auth', jsonParser, (req, res) => {
     });
 })
 
-router.post('/dashbord', (req, res) => {
+router.post('/dashbord', passport.authenticate('jwt', { session: false }), (req, res) => {
     let newPost = new Post({
         category: req.body.category,
         title: req.body.title,
